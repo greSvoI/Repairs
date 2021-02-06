@@ -58,6 +58,7 @@ namespace Repairs
 
 		private void buttonClose_Click(object sender, EventArgs e)
 		{
+			Request.SaveClient(requests);
 			this.Close();
 		}
 
@@ -73,18 +74,18 @@ namespace Repairs
 						listBox1.Items.Add(item.Fio);
 
 			}
-			if(textBoxSearch.Text!="")
+			else if (Request.CheckFio(textBoxSearch.Text))
 			{
-				if (Request.CheckFio(textBoxSearch.Text))
-				{
+				
 					temp = textBoxSearch.Text;
 					listBox1.Items.Clear();
 					foreach (var item in requests)
 						if (item.Fio == temp)
-							listBox1.Items.Add(item.Fio);
-				}
+						listBox1.Items.Add(item.Fio);
 				
+
 			}
+			else MessageBox.Show("Некорректный ввод");
 		}
 
 		private void buttonDel_Click(object sender, EventArgs e)
