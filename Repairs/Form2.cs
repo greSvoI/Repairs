@@ -13,25 +13,42 @@ namespace Repairs
 {
 	public partial class Form2 : Form
 	{
+		Request request = new Request();
+		public Request Reques { get => request; set { request = value; } }
 		public Form2()
 		{
 			InitializeComponent();
 		}
-		public Form2(Request  request)
+		public Form2(Request  req)
 		{
 			InitializeComponent();
-			textBoxFio.Text = request.Fio;
-			textBoxDescription.Text = request.Description;
-			textBoxDate.Text = request.Times;
+			Reques = req;
+			textBoxFio.Text = Reques.Fio;
+			textBoxDescription.Text = Reques.Description;
+			textBoxDate.Text = Reques.Times;
 			foreach (var item in comboBoxStatus.Items)
 				if (request.Status == item.ToString())
 					comboBoxStatus.SelectedItem = item;
-
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void buttonSave_Click(object sender, EventArgs e)
 		{
-			Request.CheckFio(textBoxFio.Text);
+
+			if (Request.CheckFio(textBoxFio.Text) && Request.CheckDate(textBoxDate.Text) && textBoxDescription.Text != "" && comboBoxStatus.SelectedIndex != -1)
+			{
+				Reques.Fio = textBoxFio.Text;
+				Reques.Times = textBoxDate.Text;
+				Reques.Description = textBoxDescription.Text;
+				Reques.Status = comboBoxStatus.SelectedItem.ToString();
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else MessageBox.Show("Некоректные данные");
+		}
+
+		private void buttonClose_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

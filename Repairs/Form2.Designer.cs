@@ -40,7 +40,8 @@ namespace Repairs
 			this.textBoxDate = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.buttonSave = new System.Windows.Forms.Button();
+			this.buttonClose = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// textBoxFio
@@ -124,23 +125,35 @@ namespace Repairs
 			this.comboBoxStatus.Size = new System.Drawing.Size(290, 21);
 			this.comboBoxStatus.TabIndex = 7;
 			// 
-			// button1
+			// buttonSave
 			// 
-			this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(137, 281);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(128, 32);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "Сохранить";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.buttonSave.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonSave.Location = new System.Drawing.Point(111, 277);
+			this.buttonSave.Name = "buttonSave";
+			this.buttonSave.Size = new System.Drawing.Size(128, 32);
+			this.buttonSave.TabIndex = 8;
+			this.buttonSave.Text = "Сохранить";
+			this.buttonSave.UseVisualStyleBackColor = true;
+			this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+			// 
+			// buttonClose
+			// 
+			this.buttonClose.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonClose.Location = new System.Drawing.Point(273, 277);
+			this.buttonClose.Name = "buttonClose";
+			this.buttonClose.Size = new System.Drawing.Size(128, 32);
+			this.buttonClose.TabIndex = 9;
+			this.buttonClose.Text = "Отмена";
+			this.buttonClose.UseVisualStyleBackColor = true;
+			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
 			// 
 			// Form2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(409, 316);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonClose);
+			this.Controls.Add(this.buttonSave);
 			this.Controls.Add(this.comboBoxStatus);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.textBoxDate);
@@ -169,6 +182,7 @@ namespace Repairs
 		private System.Windows.Forms.TextBox textBoxDate;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox comboBoxStatus;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button buttonSave;
+		private System.Windows.Forms.Button buttonClose;
 	}
 }

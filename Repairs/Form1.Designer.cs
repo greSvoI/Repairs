@@ -30,10 +30,12 @@ namespace Repairs
 		private void InitializeComponent()
 		{
 			this.listBox1 = new System.Windows.Forms.ListBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.button4 = new System.Windows.Forms.Button();
+			this.buttonCreate = new System.Windows.Forms.Button();
+			this.buttonEdit = new System.Windows.Forms.Button();
+			this.buttonDel = new System.Windows.Forms.Button();
+			this.buttonClose = new System.Windows.Forms.Button();
+			this.textBoxSearch = new System.Windows.Forms.TextBox();
+			this.buttonSearch = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -41,72 +43,96 @@ namespace Repairs
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(12, 12);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(293, 420);
+			this.listBox1.Size = new System.Drawing.Size(293, 381);
 			this.listBox1.TabIndex = 0;
 			// 
-			// button1
+			// buttonCreate
 			// 
-			this.button1.Location = new System.Drawing.Point(311, 12);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(118, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Создать Заявку";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.buttonCreate.Location = new System.Drawing.Point(311, 12);
+			this.buttonCreate.Name = "buttonCreate";
+			this.buttonCreate.Size = new System.Drawing.Size(118, 23);
+			this.buttonCreate.TabIndex = 1;
+			this.buttonCreate.Text = "Создать Заявку";
+			this.buttonCreate.UseVisualStyleBackColor = true;
+			this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
 			// 
-			// button2
+			// buttonEdit
 			// 
-			this.button2.Location = new System.Drawing.Point(311, 41);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(118, 23);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "Редактировать";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.buttonEdit.Location = new System.Drawing.Point(311, 41);
+			this.buttonEdit.Name = "buttonEdit";
+			this.buttonEdit.Size = new System.Drawing.Size(118, 23);
+			this.buttonEdit.TabIndex = 2;
+			this.buttonEdit.Text = "Редактировать";
+			this.buttonEdit.UseVisualStyleBackColor = true;
+			this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
 			// 
-			// button3
+			// buttonDel
 			// 
-			this.button3.Location = new System.Drawing.Point(311, 70);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(118, 23);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Удалить";
-			this.button3.UseVisualStyleBackColor = true;
+			this.buttonDel.Location = new System.Drawing.Point(311, 70);
+			this.buttonDel.Name = "buttonDel";
+			this.buttonDel.Size = new System.Drawing.Size(118, 23);
+			this.buttonDel.TabIndex = 3;
+			this.buttonDel.Text = "Удалить";
+			this.buttonDel.UseVisualStyleBackColor = true;
+			this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
 			// 
-			// button4
+			// buttonClose
 			// 
-			this.button4.Location = new System.Drawing.Point(311, 409);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(118, 23);
-			this.button4.TabIndex = 4;
-			this.button4.Text = "Закрыть";
-			this.button4.UseVisualStyleBackColor = true;
+			this.buttonClose.Location = new System.Drawing.Point(311, 409);
+			this.buttonClose.Name = "buttonClose";
+			this.buttonClose.Size = new System.Drawing.Size(118, 23);
+			this.buttonClose.TabIndex = 4;
+			this.buttonClose.Text = "Закрыть";
+			this.buttonClose.UseVisualStyleBackColor = true;
+			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+			// 
+			// textBoxSearch
+			// 
+			this.textBoxSearch.Location = new System.Drawing.Point(12, 411);
+			this.textBoxSearch.Name = "textBoxSearch";
+			this.textBoxSearch.Size = new System.Drawing.Size(191, 22);
+			this.textBoxSearch.TabIndex = 5;
+			// 
+			// buttonSearch
+			// 
+			this.buttonSearch.Location = new System.Drawing.Point(210, 409);
+			this.buttonSearch.Name = "buttonSearch";
+			this.buttonSearch.Size = new System.Drawing.Size(95, 23);
+			this.buttonSearch.TabIndex = 6;
+			this.buttonSearch.Text = "Поиск";
+			this.buttonSearch.UseVisualStyleBackColor = true;
+			this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(434, 441);
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonSearch);
+			this.Controls.Add(this.textBoxSearch);
+			this.Controls.Add(this.buttonClose);
+			this.Controls.Add(this.buttonDel);
+			this.Controls.Add(this.buttonEdit);
+			this.Controls.Add(this.buttonCreate);
 			this.Controls.Add(this.listBox1);
 			this.MaximumSize = new System.Drawing.Size(450, 480);
 			this.MinimumSize = new System.Drawing.Size(450, 480);
 			this.Name = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
 		private System.Windows.Forms.ListBox listBox1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button buttonCreate;
+		private System.Windows.Forms.Button buttonEdit;
+		private System.Windows.Forms.Button buttonDel;
+		private System.Windows.Forms.Button buttonClose;
+		private System.Windows.Forms.TextBox textBoxSearch;
+		private System.Windows.Forms.Button buttonSearch;
 	}
 }
 

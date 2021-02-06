@@ -21,46 +21,28 @@ namespace Repairs
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			using(StreamReader sr = new StreamReader("remote.txt"))
-			{
-				try
-				{
-					while (true)
-					{
-						Request temp = new Request();
-						
-						temp.Fio = sr.ReadLine();
-						temp.Description = sr.ReadLine();
-						temp.Times = sr.ReadLine();
-						temp.Status = sr.ReadLine();
-						requests.Add(temp);
-						if (sr.EndOfStream) break;
-					}
-					foreach (Request item in requests)
-						listBox1.Items.Add(item.Fio);
-				}
-				catch (Exception ex)
-				{
-
-					MessageBox.Show(ex.Message);
-				}
-			}
-
-
-
-
-
+			requests = Request.LoadClient();
+			foreach (Request item in requests)
+				listBox1.Items.Add(item.Fio);
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void buttonCreate_Click(object sender, EventArgs e)
 		{
 			Form2 form = new Form2();
-			form.ShowDialog();
+			if(form.ShowDialog() == DialogResult.OK)
+			{
+				Request temp = new Request();
+				temp = form.Reques;
+				requests.Add(temp);
+				listBox1.Items.Add(temp.Fio);
+				Request.SaveClient(requests);
+			}
+
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		private void buttonEdit_Click(object sender, EventArgs e)
 		{
-			Form2 form2 ;
+			Form2 form2;
 			if (listBox1.SelectedIndex != -1)
 			{
 				foreach (Request item in requests)
@@ -68,7 +50,49 @@ namespace Repairs
 					{
 						form2 = new Form2(item);
 						form2.ShowDialog();
+						Request.SaveClient(requests);
 					}
+			}
+			else MessageBox.Show("Выберите клиента");
+		}
+
+		private void buttonClose_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void buttonSearch_Click(object sender, EventArgs e)
+		{
+			string temp = "";
+			if(textBoxSearch.Text!="")
+			{
+				if (Request.CheckFio(textBoxSearch.Text))
+				{
+					temp = textBoxSearch.Text;
+					listBox1.Items.Clear();
+					foreach (var item in requests)
+						if (item.Fio == temp)
+							listBox1.Items.Add(item.Fio);
+				}
+				if(textBoxSearch.Text == "Открыта" && textBoxSearch.Text == "В обработке" && textBoxSearch.Text == "Закрыта" && textBoxSearch.Text == "Нерешаемая")
+				{
+					listBox1.Items.Clear();
+					foreach (Request item in requests)
+						if (item.Status == textBoxSearch.Text)
+							listBox1.Items.Add(item.Fio);
+
+				}
+			}
+		}
+
+		private void buttonDel_Click(object sender, EventArgs e)
+		{
+			if(listBox1.SelectedIndex!=-1)
+			{
+				foreach (Request item in requests)
+					if (listBox1.SelectedItem.ToString() == item.Fio)
+						listBox1.Items.Remove(item.Fio);
+				Request.SaveClient(requests);
 			}
 		}
 	}
