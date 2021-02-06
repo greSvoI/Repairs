@@ -78,7 +78,7 @@ namespace Repairs
 			// 
 			// buttonClose
 			// 
-			this.buttonClose.Location = new System.Drawing.Point(311, 409);
+			this.buttonClose.Location = new System.Drawing.Point(311, 405);
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.Size = new System.Drawing.Size(118, 23);
 			this.buttonClose.TabIndex = 4;
@@ -88,14 +88,14 @@ namespace Repairs
 			// 
 			// textBoxSearch
 			// 
-			this.textBoxSearch.Location = new System.Drawing.Point(12, 411);
+			this.textBoxSearch.Location = new System.Drawing.Point(12, 407);
 			this.textBoxSearch.Name = "textBoxSearch";
 			this.textBoxSearch.Size = new System.Drawing.Size(191, 22);
 			this.textBoxSearch.TabIndex = 5;
 			// 
 			// buttonSearch
 			// 
-			this.buttonSearch.Location = new System.Drawing.Point(210, 409);
+			this.buttonSearch.Location = new System.Drawing.Point(209, 405);
 			this.buttonSearch.Name = "buttonSearch";
 			this.buttonSearch.Size = new System.Drawing.Size(95, 23);
 			this.buttonSearch.TabIndex = 6;
