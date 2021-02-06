@@ -1,0 +1,13 @@
+D:\Repairs\Repairs\bin\Debug\Repairs.exe.config
+D:\Repairs\Repairs\bin\Debug\Repairs.exe
+D:\Repairs\Repairs\bin\Debug\Repairs.pdb
+D:\Repairs\Repairs\bin\Debug\MetroFramework.dll
+D:\Repairs\Repairs\obj\Debug\Repairs.csprojAssemblyReference.cache
+D:\Repairs\Repairs\obj\Debug\Repairs.Form1.resources
+D:\Repairs\Repairs\obj\Debug\Repairs.Form2.resources
+D:\Repairs\Repairs\obj\Debug\Repairs.Properties.Resources.resources
+D:\Repairs\Repairs\obj\Debug\Repairs.csproj.GenerateResource.cache
+D:\Repairs\Repairs\obj\Debug\Repairs.csproj.CoreCompileInputs.cache
+D:\Repairs\Repairs\obj\Debug\Repairs.csproj.CopyComplete
+D:\Repairs\Repairs\obj\Debug\Repairs.exe
+D:\Repairs\Repairs\obj\Debug\Repairs.pdb
