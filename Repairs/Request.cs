@@ -66,8 +66,11 @@ namespace Repairs
 		public static bool CheckFio(string str)
 		{
 			string[] check = str.Split(' ');
+			if (check.Length != 3) return false;
 			for (int i = 0; i < check.Length; i++)
 			{
+				if (check[i].Length <= 3)
+					return false;
 				if (!char.IsUpper(check[i].First()))
 					return false;
 				if(!check[i].Any(x=>char.IsLetter(x)))

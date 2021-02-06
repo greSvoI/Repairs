@@ -64,6 +64,15 @@ namespace Repairs
 		private void buttonSearch_Click(object sender, EventArgs e)
 		{
 			string temp = "";
+			if (textBoxSearch.Text == "Открыта" || textBoxSearch.Text == "В обработке" || textBoxSearch.Text == "Закрыта" || textBoxSearch.Text == "Нерешаемая")
+			{
+				temp = textBoxSearch.Text;
+				listBox1.Items.Clear();
+				foreach (Request item in requests)
+					if (item.Status == textBoxSearch.Text)
+						listBox1.Items.Add(item.Fio);
+
+			}
 			if(textBoxSearch.Text!="")
 			{
 				if (Request.CheckFio(textBoxSearch.Text))
@@ -74,14 +83,7 @@ namespace Repairs
 						if (item.Fio == temp)
 							listBox1.Items.Add(item.Fio);
 				}
-				if(textBoxSearch.Text == "Открыта" && textBoxSearch.Text == "В обработке" && textBoxSearch.Text == "Закрыта" && textBoxSearch.Text == "Нерешаемая")
-				{
-					listBox1.Items.Clear();
-					foreach (Request item in requests)
-						if (item.Status == textBoxSearch.Text)
-							listBox1.Items.Add(item.Fio);
-
-				}
+				
 			}
 		}
 
