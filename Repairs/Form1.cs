@@ -85,6 +85,29 @@ namespace Repairs
 				
 
 			}
+			else if(Request.CheckDate(textBoxSearch.Text))
+			{
+				listBox1.Items.Clear();
+				foreach(Request item in requests)
+				{
+					if (item.Times == textBoxSearch.Text)
+						listBox1.Items.Add(item.Fio);
+
+				}
+			}
+			else if(textBoxSearch.Text!="")
+			{
+				listBox1.Items.Clear();
+				foreach (Request item in requests)
+				{
+					temp = item.Description;
+					if(temp.Contains(textBoxSearch.Text))
+					{
+						listBox1.Items.Add(item.Fio);
+					}
+
+				}
+			}
 			else MessageBox.Show("Некорректный ввод");
 		}
 
@@ -97,6 +120,13 @@ namespace Repairs
 						listBox1.Items.Remove(item.Fio);
 				Request.SaveClient(requests);
 			}
+		}
+
+		private void buttonReload_Click(object sender, EventArgs e)
+		{
+			listBox1.Items.Clear();
+			foreach (Request item in requests)
+				listBox1.Items.Add(item.Fio);
 		}
 	}
 }

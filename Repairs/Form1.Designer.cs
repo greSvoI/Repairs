@@ -36,6 +36,7 @@ namespace Repairs
 			this.buttonClose = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
+			this.buttonReload = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -103,11 +104,22 @@ namespace Repairs
 			this.buttonSearch.UseVisualStyleBackColor = true;
 			this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
 			// 
+			// buttonReload
+			// 
+			this.buttonReload.Location = new System.Drawing.Point(311, 99);
+			this.buttonReload.Name = "buttonReload";
+			this.buttonReload.Size = new System.Drawing.Size(118, 23);
+			this.buttonReload.TabIndex = 7;
+			this.buttonReload.Text = "Обновить";
+			this.buttonReload.UseVisualStyleBackColor = true;
+			this.buttonReload.Click += new System.EventHandler(this.buttonReload_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(434, 441);
+			this.Controls.Add(this.buttonReload);
 			this.Controls.Add(this.buttonSearch);
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(this.buttonClose);
@@ -133,6 +145,7 @@ namespace Repairs
 		private System.Windows.Forms.Button buttonClose;
 		private System.Windows.Forms.TextBox textBoxSearch;
 		private System.Windows.Forms.Button buttonSearch;
+		private System.Windows.Forms.Button buttonReload;
 	}
 }
 
